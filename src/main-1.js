@@ -5,13 +5,15 @@ import { REQUEST_DELAY } from './constants'
 import { log } from './utils'
 
 const update = async (i) => {
+    log(i, 'start')
     await setValue((await getValue(i)) + 1, i)
+    log(i, 'end')
 }
 
 const main = async () => {
     for (let i = 0; i < 100; i++) {
         const d = await networkDelay(REQUEST_DELAY)
-        log(i, '+++', chalk.gray(d + 'ms'))
+        log(i, 'delay', chalk.gray(d + 'ms'))
         update(i) // without awit :D
     }
     await timeout(5 * REQUEST_DELAY)
