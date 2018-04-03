@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "babel-node src/main.js"
+    "start-1": "babel-node src/main-1.js"
   },
   "dependencies": {
     "async-csp": "^0.5.0",
